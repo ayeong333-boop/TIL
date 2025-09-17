@@ -1,0 +1,43 @@
+2025_9_17 TIL
+3주차 정리 - 다트 기본 문법과 데이터 타입
+<변수와 타입>
+타입 추론(var)
+var author = '개발하는남자';
+명시적 타입 선언
+String author = "개발하는남자';
+Null Safety
+String name = '홍길동' -> null 불가
+String? bookName; => null 가능
+<주요 데이터 타입>
+숫자 타입
+int age = 25;
+double height = 175.5;
+문자열 타입
+var greeting = 'Hello';
+var name = "world";
+var multLine = '''
+여러 줄
+문자열
+''';
+<컬렉션 타입>
+List [1, 2, 3]
+set 중복 불가 {사과, 바나나}
+Map: {'name', '홍길동', 'age':25}
+<연산자>
+산술 연산자: 
+print(5 + 3);
+print(10 - 4);
+print(3 * 4);
+print(15 / 3);
+print(17 % 5);
+비교 연산자:
+print(5 > 3);
+print(5 <= 3);
+print(5 == 5);
+조건 연산자:
+// null 병합 연산자
+String? name = null;
+print(name ?? 'Unknown'); // Unknown
+ // 삼항 연산자
+int age = 20;
+String status = age >= 18 ? '성인' : '미성년자';
