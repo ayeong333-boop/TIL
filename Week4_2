@@ -1,3 +1,47 @@
 2025_9_28 TIL
 4주차 정리 - 다트 기본 문법(반복문)
 <for문>
+enum Fruit{ Apple,Lemon,Grape,Mandarin }
+
+for(var i=0; i< Fruit.values.length; i++){
+  print(Fruit.values[i]);
+}
+
+<forEach문>
+Fruit.values.forEach((fuite)){
+  print(fuite);
+});
+
+<for~in문>
+for (var fruit in Fruit.values) {
+  print(fruit);
+}
+
+<while문>
+var i = 0;
+while(i < Fruit.values.length){
+  print(Fruit.values[i]);
+  i++
+}
+
+<do while문>
+var i = 0;
+do{
+  print(Fruit.values[i]);
+  i++
+}while(i<Fruit.values.length);
+
+
+var i = 0;
+while(i>1){
+  print('i : $i 번 실행 중');
+  i++;
+}
+
+var j = 0;
+do{
+  print('j : $j 번 실행 중');
+  j++;
+}while(j>1)
+//출력
+//j : 0 번 실행 중
