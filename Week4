@@ -11,17 +11,22 @@ if(age > 20){
 // 출력 : 성인
 
 <switch문>
-var a = '사과';
+enum Fruit{ Apple, Lemon, Grape, Mandarin }
+
+var a = Fruit.Apple;
 
 switch(a){
-  case '레몬':
+  case Fruit.Apple
+    print('사과 선택');
+  break;
+  case Fruit.Lemon:
     print('레몬 선택');
   break;
-  case '귤':
-    print('귤 선택');
+  case Fruit.Grape:
+    print('포도 선택');
   break;
-  case '사과':
-    print('사과 선택');
+  case Fruit.Mandarin:
+    print('귤 선택');
   break;
 }
 // 출력 : 사과 선택
