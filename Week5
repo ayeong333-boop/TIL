@@ -1,1 +1,52 @@
+2025_10_1 TIL
+5주차 정리 - 플러터 핵심 정리
 
+<아키텍처>
+3계층 구조
+Framework (Dart): 위젯, 상태 관리, UI 구성
+Engine (C++): 렌더링, Skia 그래픽, I/O
+Embedder (Platform): OS별 이벤트, 화면 처리
+
+<위젯>
+모든 것이 위젯이다
+StatelessWidget: 상태 없음, 고정 UI
+StatefulWidget: 상태 있음(setState), 동적 UI
+InheritedWidget: 데이터 트리 공유, 상태 관리(Provider 기반)
+
+<라이프사이클>
+Stateless: Constructor → createElement → build
+Stateful: Constructor → createState → initState → didChangeDependencies → build → setState → build → dispose
+initState(): 초기화 (1회)
+build(): UI 갱신
+setState(): 상태 변경 반영
+dispose(): 리소스 해제
+
+<레이아웃>
+Container: 박스, 패딩·마진
+Row / Column: 가로·세로 배치
+Stack + Positioned: 겹침 구조
+Expanded / SizedBox: 공간 제어
+ListView / GridView / PageView: 스크롤형 구조
+
+<애니메이션>
+암시적 애니메이션 위젯: AnimatedContainer, AnimatedOpacity, AnimatedPositioned
+공통 속성: duration, curve, onEnd
+
+라우팅 (Navigation)
+MaterialApp(
+routes: {
+'/': () => HomePage(),
+'/second': () => SecondPage(),
+},
+)
+pushNamed(): 새 페이지로 이동
+pop(): 뒤로가기
+pushReplacementNamed(): 현재 페이지 교체
+popUntil(): 특정 경로까지 복귀
+
+핵심 정리
+상태 변화: setState()
+Context 필요 초기화: didChangeDependencies()
+종료 전 정리: dispose()
+const 위젯 사용, 불필요한 rebuild 최소화
+복잡한 상태는 Provider / Bloc 사용
