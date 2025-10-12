@@ -1,3 +1,29 @@
 2025_10_2 TIL
 5주차 정리 - 플러터 아키텍처와 위젯 실습 내용 요약
 
+플러터는 위젯 중심 구조로 되어 있고 모든 화면 구성 요소는 위젯으로 이루어진다.
+위젯은 크게 두 가지로 나뉜다.
+- 레이아웃 위젯: 배치 역할을 하는 위젯으로 Container, Row, Column, Stack, Positioned 등이 있다.
+- 컴포넌트 위젯: 화면에 직접 보이는 요소로 Text, Button, Image 등이 있다.
+
+플러터의 아키텍처는 세 단계로 구성된다.
+- Embedder: 안드로이드, iOS, 웹, 윈도우 등 각 플랫폼별 구현 부분
+- Engine: C++ 기반 엔진으로 Skia 그래픽 라이브러리를 통해 UI 렌더링 담당
+- Framework: Dart 언어로 작성된 부분으로 개발자가 직접 다루는 영역
+StatelessWidget은 상태가 없는 위젯으로 한 번 렌더링되면 변하지 않는다.
+StatefulWidget은 상태를 갖는 위젯으로 createState로 상태를 만들고 setState로 상태를 바꿀 때마다 UI가 다시 빌드된다.
+InheritedWidget은 여러 위젯이 데이터를 쉽게 공유할 수 있게 하는 상위 위젯이다.
+위젯의 생명주기(Lifecycle)는 다음과 같다.
+- StatelessWidget: 생성 → 빌드 → 종료
+- StatefulWidget: constructor → createState → initState → build → dispose
+- 상태가 바뀌면 setState가 호출되고 build가 다시 실행되어 화면이 갱신된다.
+Container는 크기, 색상, 여백, 테두리 등을 설정할 수 있고 자식 위젯을 하나 가진다.
+내부 여백은 padding, 외부 여백은 margin이다.
+Row는 가로 배치, Column은 세로 배치, Stack은 겹치기 배치, Expanded는 남은 공간을 채우는 용도, SizedBox는 고정 크기 영역을 만든다.
+Navigator는 화면 이동 기능을 담당한다.
+- Navigator.push는 새로운 페이지로 이동.
+- Navigator.pop은 이전 화면으로 돌아감.
+- MaterialApp의 routes 속성에 페이지 경로를 등록해 관리할 수 있다.
+플러터는 Skia 엔진을 사용하기 때문에 애니메이션이 매우 부드럽고 빠르다.
+AnimatedContainer, Tween, AnimationController 등을 활용해 다양한 효과를 줄 수 있다.
+Dart의 실행 구조는 main() 함수부터 시작한다.
