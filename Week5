@@ -32,7 +32,7 @@ ListView / GridView / PageView: 스크롤형 구조
 암시적 애니메이션 위젯: AnimatedContainer, AnimatedOpacity, AnimatedPositioned
 공통 속성: duration, curve, onEnd
 
-라우팅 (Navigation)
+<라우팅 (Navigation)>
 MaterialApp(
 routes: {
 '/': () => HomePage(),
@@ -44,7 +44,7 @@ pop(): 뒤로가기
 pushReplacementNamed(): 현재 페이지 교체
 popUntil(): 특정 경로까지 복귀
 
-핵심 정리
+<핵심 정리>
 상태 변화: setState()
 Context 필요 초기화: didChangeDependencies()
 종료 전 정리: dispose()
