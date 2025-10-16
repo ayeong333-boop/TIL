@@ -1,0 +1,29 @@
+2025_10_16 TIL
+6주차 실습
+void main() {
+  var n = 4;
+
+  for (var y = 0; y < n; y++) {
+    var line = '';
+    var width = n * 2 - 1;
+
+    for (var x = 0; x < width; x++) {
+      var condition =
+          (x % width) - (n - 1) == y || n - (x % width) - 1 == y;
+      if (condition) {
+        line += '#';
+      } else {
+        line += ' ';
+      }
+    }
+    print(line);
+  }
+}
+실행결과: 
+   #      #      #      #           
+  # #    # #    # #    # #                
+ #   #  #   #  #   #  #   #       
+#     ##     ##     ##     #   
+
+
+
