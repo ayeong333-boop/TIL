@@ -1,1 +1,93 @@
+2025_10_17 TIL
+Dart 언어 핵심 정리
 
+[1] 변수 선언
+var name = '영';
+String city = 'Seoul';
+int age = 20;
+double height = 170.5;
+bool isStudent = true;
+
+var : 타입 자동 추론
+final : 한 번만 할당 가능
+const : 컴파일 시 상수 (값 변경 불가)
+
+[2] 조건문
+if (age >= 20) {
+print('성인');
+} else {
+print('미성년자');
+}
+
+switch (day) {
+case 'Mon':
+print('월요일');
+break;
+default:
+print('그 외 요일');
+}
+
+[3] 반복문
+for (int i = 0; i < 5; i++) {
+print(i);
+}
+
+int i = 0;
+while (i < 3) {
+print(i);
+i++;
+}
+
+[4] 컬렉션
+
+List<String> fruits = ['apple', 'banana', 'melon'];
+fruits.add('grape');
+print(fruits[0]); // apple
+
+Set<int> nums = {1, 2, 3, 3};
+print(nums); // {1, 2, 3} 중복 제거
+
+Map<String, dynamic> person = {'name': '영', 'age': 20};
+print(person['name']);
+person['age'] = 21;
+
+[5] 함수
+int add(int a, int b) {
+return a + b;
+}
+
+void greet(String name) => print('Hello $name');
+
+[6] 클래스
+class Person {
+String name;
+int age;
+
+Person(this.name, this.age);
+
+void introduce() {
+print('저는 $name, ${age}살입니다.');
+}
+}
+
+void main() {
+var p = Person('영', 20);
+p.introduce();
+}
+
+[7] 비동기 처리 (async / await)
+Future<void> fetchData() async {
+print('데이터 가져오는 중...');
+await Future.delayed(Duration(seconds: 2));
+print('가져오기 완료');
+}
+
+[8] 기타 문법 팁
+
+문자열 보간 : print('이름은 $name, 나이는 ${age}살');
+
+Null safety : 변수 뒤에 ? 붙이면 null 허용 (String? name)
+
+삼항연산자 : var result = age > 18 ? '성인' : '미성년자';
+
+리스트 반복 : for (var item in fruits) { print(item); }
