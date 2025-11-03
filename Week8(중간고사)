@@ -1,1 +1,22 @@
+중간고사 TIL
 
+플러터는 하나의 코드로 안드로이드, iOS, 웹 등에서 앱 개발 가능
+핵심 장점: 빠른 개발(Hot Reload), 크로스 플랫폼, 일관된 UI, 높은 성능
+프로그래밍 언어: Dart
+UI는 모든 것이 위젯(widget)으로 구성된 선언적 구조
+Hot Reload: 앱 재시작 없이 코드 변경 즉시 반영
+Flutter SDK 설치 후 PATH 설정: 어디서든 flutter 명령어 실행 가능
+VSCode 필수 확장: Flutter, Dart
+flutter doctor: 개발 환경 점검 및 누락 항목 확인
+IDE 단축키: 개발 속도와 효율 향상
+외부 패키지 추가: pubspec.yaml 사용
+다트 기본 자료형: int, double, num, String, bool, List, Set, Map, Runes, Symbol
+final: 런타임 한 번만 할당, const: 컴파일 시 값 고정
+late: 나중에 초기화, ? : null 허용 변수
+반복문: for, for-in, while, do-while
+var: 타입 자동 추론, 함수 선언 예: int add(int a, int b) { ... }
+앱 기본 단위: Widget
+StatelessWidget: 상태 변화 없음
+StatefulWidget: State 클래스에서 상태 관리
+Column/Row: 세로/가로 방향 정렬
+AnimatedContainer: 속성 변화 애니메이션, Navigator.push(): 화면 전환, setState(): UI 갱신
