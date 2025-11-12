@@ -1,0 +1,46 @@
+2025_11_13 10주차 TIL
+<객체지향프로그래밍 실습코드>
+
+class Animal {
+  String _name = "";
+  String get name => _name;
+
+  Animal(this._name);
+
+  void makeSound() {
+    print('$name이(가) 소리를 내고 있어요!');
+  }
+}
+
+// 자식 클래스
+class Dog extends Animal {
+  Dog(String name) : super(name);
+
+  @override
+  void makeSound() {
+    print('$name: 멍멍!');
+  }
+}
+
+// 자식 클래스
+class Cat extends Animal {
+  Cat(String name) : super(name);
+
+  @override
+  void makeSound() {
+    print('$name: 냐옹!');
+  }
+}
+
+void main() {
+  Dog dog = Dog('바둑이');
+  Cat cat = Cat('냥이');
+
+  //dog.makeSound();
+  //cat.makeSound();
+
+  List<Animal> animals = [dog, cat];
+  for (var animal in animals) {
+    animal.makeSound();
+  }
+}
