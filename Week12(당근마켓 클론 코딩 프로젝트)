@@ -1,0 +1,109 @@
+2025_11_24 TIL
+<당근마켓 클론 코딩 - 12주차 >
+- UI 구현
+- GetX 라우트 구조
+- BottomNavigation + 페이지 이동
+- 컨트롤러와 뷰 분리
+- Firebase 인증 예제는 수업에서 생략 (교재 코드만 참고
+
+* 오늘 배운 핵심 : GetX를 이용해서
+라우트 구조를 잡고 (GetMaterialApp + GetPage)
+컨트롤러를 initialBinding에 등록하고 (Get.put)
+View에서 GetView + Obx + .obs를 사용해
+BottomNavigation으로 페이지 전환이 되는 구조를 직접 구성했다. *
+
+<pubspec.yaml 세팅>
+dependencies:
+  get:
+  flutter_svg:
+  google_fonts:
+
+flutter:
+  assets:
+    - assets/images/
+    - assets/svg/
+
+<GetX 라우팅 개념 설명>
+- 페이지 이동은 GetX 라우트 사용
+- 메인 파일은 수정하지 말고 참고만
+- 라우트 등록은 GetMaterialApp에서 처리
+- 컨트롤러는 initialBinding에서 등록해야 사용 가능
+Controller 생성 -> 메인에 등록 -> View에서 GetView<controller>로 주입 -> Obx로 상태 변경 감지 후 UI 업데이트
+
+<BottomNavigation 구현>
+(1) Root 페이지에 빨간 화면 띄우기
+class Root extends StatelessWidget {
+  @override
+  Widget build(context) {
+    return Scaffold(
+      body: Container(color: Colors.red),
+    );
+  }
+}
+
+(2) 라우트 등록 (메인에 Home 연결)
+GetMaterialApp(
+  initialRoute: '/home',
+  getPages: [
+    GetPage(name: '/home', page: () => Root()),
+  ],
+)
+
+(3) BottomNavigation UI만 먼저 만들기
+bottomNavigationBar: BottomNavigationBar(
+  items: [
+    BottomNavigationBarItem(icon: Icon(Icons.home), label: "홈"),
+    BottomNavigationBarItem(icon: Icon(Icons.chat), label: "채팅"),
+  ],
+)
+
+(4) 컨트롤러 추가해서 반응형으로 바꾸기
+class RootController extends GetxController {
+  RxInt tabIndex = 0.obs;
+
+  void changeTab(int index) {
+    tabIndex.value = index;
+  }
+}
+
+(5) Root 페이지에서 Obx로 반응 적용
+class Root extends GetView<RootController> {
+  @override
+  Widget build(context) {
+    return Scaffold(
+      body: Obx(() => controller.pages[controller.tabIndex.value]),
+      bottomNavigationBar: Obx(() => BottomNavigationBar(
+        currentIndex: controller.tabIndex.value,
+        onTap: controller.changeTab,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "홈"),
+          BottomNavigationBarItem(icon: Icon(Icons.chat), label: "채팅"),
+        ],
+      )),
+    );
+  }
+}
+
+(6) 페이지 배열 구성
+List<Widget> pages = [
+  HomePage(),
+  ChatPage(),
+];
+
+(7) 컨트롤러를 메인에서 등록
+class InitialBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.put(RootController());
+  }
+}
+
+GetMaterialApp(
+  initialBinding: InitialBinding(),
+)
+
+과제 : p419 로그인 UI 구현하기
+- Google/Apple 버튼 포함
+- Firebase 연결 X
+- 누르면 다음 화면으로만 이동
+- 커스텀 버튼 BTN.dart 사용 가능
