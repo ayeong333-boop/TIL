@@ -4,7 +4,7 @@
 - GetX 라우트 구조
 - BottomNavigation + 페이지 이동
 - 컨트롤러와 뷰 분리
-- Firebase 인증 예제는 수업에서 생략 (교재 코드만 참고
+- Firebase 인증 예제는 수업에서 생략 (교재 코드만 참고)
 
 * 오늘 배운 핵심 : GetX를 이용해서
 라우트 구조를 잡고 (GetMaterialApp + GetPage)
