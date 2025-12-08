@@ -1,2 +1,49 @@
 2025_12_02 TIL
 당근마켓 클론 코딩 13주차
+
+<인증 프로세스 419p>
+- Firebase는 연동하지 않고 목업으로 처리
+- 로그인 페이지 UI는 손코딩
+- SNS 로그인은 화면 전환만 되게 구현
+- GetX의 Rx 타입으로 반응형 상태 관리
+
+<앱 Root 레이아웃 구성 손코딩>
+- main.dart에 /home 라우트 추가
+- GetMaterialApp과 GetPage 설정
+- root.dart에서 BottomNavigationBar 구성
+- BottomNavController로 현재 메뉴 인덱스를 RxInt로 관리
+- Obx로 변경 감지해서 UI 갱신
+- TabBarView로 페이지 전환 구성
+- tabController.animateTo(index)로 이동 처리
+
+<홈 화면 구성 바이브 코딩>
+- AppBar 왼쪽 지역명 오른쪽 검색 아이콘 알림 아이콘
+- Body 영역은 ListView.separated 사용
+- 아이템 구성 요소는 이미지 제목 판매자 날짜 가격 또는 나눔 여부
+- Mock 데이터 사용
+- 오른쪽 아래 FloatingActionButton으로 상품 등록 페이지 이동
+
+<상품 등록 페이지 챕터 17>
+필수 구성 요소
+- 이미지 선택
+- 제목 입력
+- 카테고리 선택
+- 가격 입력 가격 제안받기 체크박스
+- 상세 설명
+- 저장 버튼
+- Validation 동작 구현
+
+<바이브 코딩 활용>
+- Copilot Pro 또는 Google Antigravity 사용
+- 레이아웃은 동일하지 않아도 되지만 구성 요소는 모두 포함해야 함
+- AI가 만든 코드 정리와 오류 수정 필수
+- 필요한 경우 단위 테스트로 기능 검증
+
+<GetX 핵심 구조>
+- 라우트 설정 후 Binding에서 Controller 주입
+- View는 Controller를 바로 사용
+- Rx 변수로 상태 저장하고 Obx로 반응 처리
+- 사용 패키지 get flutter_svg equatable google_fonts
+
+<전체 요약>
+인증 목업 → Root 레이아웃 → 홈 화면 → 상품 등록 페이지 → 전체 기능 흐름 완성
