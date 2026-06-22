@@ -1,1 +1,33 @@
 2026_03_26 3주차 TIL
+
+CLAUDE.md - 프로젝트 관리
+CLAUDE.md란?
+- 프로젝트의 구조, 규칙, 명령어를 기록한 설정 파일
+- 클로드 코드가 자동으로 읽어들이는 "프로젝트 매뉴얼"
+- 비유: 사용 설명서 + 프로젝트 지도 + 팀 규칙 문서
+
+CLAUDE.md 구조
+- Project Overview: 프로젝트 목적과 소개
+- Commands: 자주 쓰는 명령어
+- Tech Stack: 사용 기술/라이브러리
+- Architecture: 폴더 구조와 역할
+- Code Style: 코딩 규칙과 스타일
+- Development Notes: 개발 참고 사항
+
+자동 생성 및 관리
+bash/init  # CLAUDE.md 자동 생성 (프로젝트 폴더 분석)
+# 키로 빠르게 규칙 추가
+# 앞으로 만드는 모든 파일은 날짜와 시간을 주석으로 표시해 줘.
+
+User memory (~/.claude/CLAUDE.md): 모든 프로젝트에 공통 적용
+Project memory (./CLAUDE.md): 현재 프로젝트에만 적용
+
+<계층적 구조로 프로젝트 확장>
+VibeCoding/
+├── CLAUDE.md (공통 규칙)
+├── desktop_version/
+│   ├── CLAUDE.md (데스크톱 전용 규칙)
+│   └── digit_recognition.py
+└── web_version/
+    ├── CLAUDE.md (웹 전용 규칙)
+    └── (웹 관련 파일들)
