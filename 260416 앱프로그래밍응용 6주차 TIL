@@ -1,1 +1,49 @@
 2026_04_16 6주차 TIL
+
+5. 오픈라우터(OpenRouter) API 발급 절차
+openrouter.ai 접속 → [Sign in]
+구글 계정으로 가입
+프로필 아이콘 → [Keys] 메뉴
+[Create API Key] → Name 입력 → [Create]
+생성된 키를 안전하게 저장
+
+6. 무료 AI 모델 선택 (2026년 4월 기준)
+이미지 인식: Google Gemma 3 27B (free)
+텍스트 생성: Qwen 3.6 Plus (free) [DeepSeek V3.1 무료 버전 종료]
+모델 검색 필터:
+- Prompt pricing → FREE 선택
+- Input Modalities → Image 또는 Text 선택
+
+7. Streamlit 웹 프레임워크
+정의: 파이썬 코드만으로 웹 애플리케이션을 빠르게 구축하는 도구
+특징:
+- 데이터 시각화와 ML 모델 시연에 특화
+- HTML/CSS/JS 없이 파이썬만 사용
+- streamlit run 명령어로 실행
+최신 버전: v1.56.0 (2026.04), Python ≥ 3.10 필요
+
+8. 다중 AI 모델 연동 - 단계별 개발
+'냉장고를 부탁해' 앱 예시:
+1단계 (재료 인식): Gemma 모델 연동
+- 냉장고 사진 업로드 → AI가 재료 분석
+2단계 (레시피 생성): Qwen 모델 연동
+- 인식된 재료 → 맞춤 레시피 생성
+3단계 (저장 기능): 사용자 프로필
+- 로그인/회원가입 → 레시피 저장 → 대시보드
+
+분해 전략: 전체 앱을 3개 PRD로 나누어 점진적 구현
+
+PRD_step1.md → PRD_step2.md → PRD_step3.md
+
+9. API 설정 파일 구조
+클로드 코드가 자동 생성:
+- .gitignore: .env 보호
+- .env.example: 다른 개발자용 템플릿
+- config.js: 환경 변수 안전 로드·검증
+- example.js: API 사용 예제
+- package.json: Node.js 프로젝트 설정
+
+10. 로컬 개발 환경의 이해
+- 현재 앱은 localhost에서만 작동 (다른 사람 접속 불가)
+- 실제 서비스를 위해서는 배포 과정 필요
+- 지금은 로컬에서의 개발과 테스트에 집중
