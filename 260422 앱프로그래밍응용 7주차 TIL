@@ -1,1 +1,77 @@
 2026_04_22 앱프로그래밍응용 7주차 TIL
+
+## 설치 명령어
+
+
+```bash
+# 원격 MCP
+claude mcp add --transport http notion 
+https://mcp.notion.com/mcp
+
+
+# 로컬 MCP (윈도우 cmd)
+claude mcp add sequential-thinking -s 
+local -- cmd /c npx -y 
+@modelcontextprotocol/
+server-sequential-thinking@latest
+
+
+# 파워셸: cmd /c 제거
+claude mcp add sequential-thinking -s 
+local -- npx -y @modelcontextprotocol/
+server-sequential-thinking@latest
+
+
+# 확인
+claude mcp list
+```
+
+
+## Git 명령어 (버전 관리)
+```
+add (준비) → commit (저장) → push 
+(업로드)
+```
+
+
+## 배포 & 데이터베이스
+
+
+- **배포**: Vercel (GitHub 연동 자동 
+배포)
+- **로컬 스토리지**: 브라우저 캐시 (공유 
+불가, 삭제 시 사라짐)
+- **클라우드 DB**: Supabase (어디서나 
+공유, 영구 보관)
+
+
+## 5W1H 프레임워크 (요구사항 정의)
+- Who: 구현 담당 팀
+- What: 제품 기능
+- When: 개발 시간
+- Where: 사용 환경
+- Why: 필요 이유
+- How: 구현 방식
+
+
+## 컴퓨팅 사고 적용
+
+
+| 사고력 | 이번 주 적용 |
+|--------|------------|
+| 분해 | 개발팀 역할 분해 (PM/BE/FE/QA/
+AI) |
+| 패턴 인식 | 서브에이전트 생성 패턴 
+반복 |
+| 추상화 | **MCP로 다양한 서비스를 표준 
+규약으로 통합** |
+| 알고리즘 | MCP 설치→인증→연결→활용 
+단계 |
+
+
+---
+
+
+**핵심**: 서브에이전트 + MCP = AI 개발팀 
++ 자동화된 도구 생태계
+
